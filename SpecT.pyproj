@@ -24,6 +24,9 @@
     <Compile Include="SpecT.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="config.ini">
       <SubType>Code</SubType>
     </Content>
