@@ -22,3 +22,5 @@ try:
             os.mkdir('csv_data')
 except Exception:
     print("Something went wrong")
+
+input("Press any key to exit")

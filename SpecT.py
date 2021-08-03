@@ -1,5 +1,6 @@
 import configparser
 import os
+import sys
 
 from telethon.sync import TelegramClient
 from telethon import connection
@@ -69,7 +70,8 @@ async def dump_all_participants(channel):
 			offset_user += len(participants.users)
 		except:
 			print("For this action you need admin permission")
-			break;
+			input("Press any key to exit")
+			sys.exit()
 
 	return all_participants
 
@@ -79,12 +81,25 @@ def readable_info(participant):
 		str(participant.scam) + "," + str(get_participant_phone(participant))
 
 
-def write_csv_data(csv_file_name, participants):
+def write_mode():
+	prompt = input("Write data about participant only if they has phone? Enter y (yes) or n (no): ")
+	return prompt == 'y'
+
+
+def writer(csv_file_name, participants, write_mode):
 	with open(os.path.join("csv_data", csv_file_name + ".csv"), "w", encoding="utf-8") as csv_file:
 		csv_file.write("id, name, is_scam, phone\n")
 		for i in range(len(participants)):
-			csv_file.write(readable_info(participants[i]) + "\n")
+			if participants[i].phone != None or not write_mode:
+				csv_file.write(readable_info(participants[i]) + "\n")
+
+
+def write_csv_data(csv_file_name, participants):
+	write_if_has_phone = write_mode()
+	writer(csv_file_name, participants, write_if_has_phone)
 
 
 with client:
 	client.loop.run_until_complete(main())
+
+input("Press enter to exit")

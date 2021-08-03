@@ -32,6 +32,20 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="config.ini" />
+    <Content Include="csv_data\badcode_tg.csv" />
+    <Content Include="csv_data\pikchidlyanaezdov.csv" />
+    <Content Include="csv_data\programmer_chatt.csv" />
+    <Content Include="csv_data\savemdk.csv" />
+    <Content Include="csv_data\SpecT_Test.csv" />
+    <Content Include="csv_data\UpSkolkovo5b.csv" />
+    <Content Include="csv_data\UpSkolkovoPets.csv" />
+    <Content Include="csv_data\upskolkovosale.csv" />
+    <Content Include="initialize.bat" />
+    <Content Include="README.md" />
+    <Content Include="SpecT.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="csv_data\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
