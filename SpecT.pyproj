@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>SpecT</Name>
     <RootNamespace>SpecT</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,15 +22,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="setup.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SpecT.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="config.ini">
-      <SubType>Code</SubType>
-    </Content>
+    <Content Include="config.ini" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
